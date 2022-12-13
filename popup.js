@@ -6,15 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const tab = tabs[0];
 
-if (tab.url === undefined || tab.url.indexOf("chrome") == 0) {
-document.querySelector('.no-color').style.display = 'none'
-      buttonCont.innerHTML =
-'<div class="cant-container"><img class="cant-icon" src="./assets/icons/no-way.svg"><img><span style="font-family: lobster, sans-serif">Color picker doesn’t work on privileged pages</span></div>';
-resultList.style.display = 'none'
+    if (tab.url === undefined || tab.url.indexOf("chrome") == 0) {
+      document.querySelector(".no-color").style.display = "none";
+      document.querySelector(".no-priv").style.display = "flex";
+      //buttonCont.innerHTML =
+      //'<div class="cant-container"><img class="cant-icon" src="./assets/icons/no-way.svg"><img><span style="font-family: lobster, sans-serif">Color picker doesn’t work on privileged pages</span></div>';
+      //resultList.style.display = 'none'
     } else if (tab.url.indexOf("file") === 0) {
       buttonCont.innerHTML =
         '<span style="font-family: lobster, sans-serif">Eye Dropper</span> can\'t access <i>local pages</i>';
     } else {
+      document.querySelector(".no-priv").style.display = "none";
       const button = document.createElement("button");
       button.setAttribute("id", "picker_btn");
       button.innerText = "Pick Color from webpage";
@@ -48,27 +50,28 @@ resultList.style.display = 'none'
 
         liElem.addEventListener("click", () => {
           navigator.clipboard.writeText(hexCode);
-          document.querySelector('.info-container').style.display = 'block'
-          setTimeout(()=>{
-          document.querySelector('.info-container').style.display = 'none'
-          },2000)
+          document.querySelector(".info-container").style.display = "block";
+          setTimeout(() => {
+            document.querySelector(".info-container").style.display = "none";
+          }, 2000);
           GiveMetheChild("#e19526", "Hex code is copied to clipboard!");
         });
         resultList.appendChild(liElem);
       });
 
       const ClearButton = document.createElement("button");
-      ClearButton.innerHTML = "<img src='./assets/icons/clear.svg' alt='clear-button'>";
+      ClearButton.innerHTML =
+        "<img src='./assets/icons/clear.svg' alt='clear-button'>";
       ClearButton.setAttribute("id", "ClearButton");
 
       ClearButton.addEventListener("click", () => {
         chrome.storage.local.remove("color_hex_code");
         window.close();
       });
-      
-      document.querySelector('.no-color').style.display = 'none'
-      resultList.style.display = 'grid'
-      document.querySelector('header').appendChild(ClearButton);
+
+      document.querySelector(".no-color").style.display = "none";
+      resultList.style.display = "grid";
+      document.querySelector("header").appendChild(ClearButton);
     }
   });
 });
