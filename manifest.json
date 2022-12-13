@@ -13,8 +13,8 @@
   "icons": {
     "16": "favicon16.png",
     "32": "favicon32.png",
-    "48": "favicon16.png",
-    "128": "favicon32.png"
+    "48": "favicon48.png",
+    "128": "favicon128.png"
   },
   "content_scripts": [
     {

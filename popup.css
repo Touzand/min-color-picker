@@ -1,5 +1,5 @@
 :root {
-  --backgound-color: #023449;
+  --backgound-color:#008cff;
   --primal-color: #000926;
   --text-color: #ffffff;
   --info-text-color: #ffffff;
@@ -7,7 +7,8 @@
 
 html {
   width: 290px;
-  background-image: linear-gradient(160deg, #0b99b6, #0a7195);
+  background-color:var(--backgound-color);
+  /*background-image: linear-gradient(160deg, #0b99b6, #0a7195);*/
 }
 
 body {
@@ -80,7 +81,7 @@ header h4 {
 }
 
 #picker_btn:hover {
-  background-color: var(--primal-color);
+  background-color: #0a7195;
   color: var(--text-color);
 }
 
