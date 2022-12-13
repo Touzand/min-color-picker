@@ -1,0 +1,152 @@
+:root {
+  --backgound-color: #023449;
+  --primal-color: #000926;
+  --text-color: #ffffff;
+  --info-text-color: #ffffff;
+}
+
+html {
+  width: 290px;
+  background-image: linear-gradient(160deg, #0b99b6, #0a7195);
+}
+
+body {
+  margin: 0px !important;
+}
+
+.cant-container,
+header {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+
+img {
+  /*width: 20px;*/
+}
+
+#mainCont {
+  min-width: 100%;
+}
+
+.cant-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 1rem 0rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.cant-icon {
+  width: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-color);
+}
+
+header h4 {
+  font-family: lobster, sans-serif;
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+#picker_btn {
+  padding: 0.5rem;
+  background-color: white;
+  font-size: 15px;
+  border: none;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #0b99b6;
+  font-weight: bold;
+}
+
+#picker_btn:hover {
+  background-color: var(--primal-color);
+  color: var(--text-color);
+}
+
+#result {
+  list-style: none;
+  grid-gap: 3px;
+  padding: 0;
+  display: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 10px 3px;
+}
+
+#result > li {
+    cursor: pointer;
+    padding: 2px 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    color: var(--text-color);
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border:solid thin white;
+  }
+
+.errorLabel {
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+#ClearButton {
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+  border: solid thin transparent;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ClearButton img{
+  width:20px;
+}
+
+#ClearButton:hover {
+}
+
+.info-container {
+  display: none;
+  color: var(--text-color);
+  text-align: center;
+  background-color: yellowgreen;
+  padding: 0.5rem;
+}
+
+.info-container p {
+  margin: 0;
+}
+
+.info-open {
+  display: block;
+}
