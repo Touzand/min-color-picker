@@ -90,6 +90,10 @@ header h4 {
   color: var(--text-color);
 }
 
+#picker_btn_cont{
+  margin:5px;
+}
+
 #result {
   list-style: none;
   grid-gap: 3px;
@@ -104,13 +108,14 @@ header h4 {
     padding: 2px 5px;
     font-size: 15px;
     border-radius: 3px;
-    color: var(--text-color);
+    color: #fff5;
+    font-weight:bold;
     text-align: center;
     height: 30px;
     display: flex;
     justify-content: end;
     align-items: end;
-    border:solid thin white;
+    border:solid thin transparent;
   }
 
 .errorLabel {
@@ -139,6 +144,37 @@ header h4 {
 }
 
 #ClearButton:hover {
+}
+
+#add-button{
+  border:solid thin white !important;
+  /*background-color:grey;*/
+  color:white !important;
+  display:flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-weight: bold;
+  font-size:1.2rem;
+}
+
+#add-button:hover{
+  background-color:#fff2;
+}
+
+#add-first-button{
+  border:solid thin white !important;
+  /*background-color:grey;*/
+  color:white !important;
+  display:flex;
+  justify-content: center !important;
+  align-items: center !important;
+  font-weight: bold;
+  font-size:1.2rem;
+  width:100%;
+}
+
+#add-first-button:hover{
+  background-color:#fff2;
 }
 
 .info-container {

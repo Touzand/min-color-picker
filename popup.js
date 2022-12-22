@@ -9,17 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tab.url === undefined || tab.url.indexOf("chrome") == 0) {
       document.querySelector(".no-color").style.display = "none";
       document.querySelector(".no-priv").style.display = "flex";
-      //buttonCont.innerHTML =
-      //'<div class="cant-container"><img class="cant-icon" src="./assets/icons/no-way.svg"><img><span style="font-family: lobster, sans-serif">Color picker doesn’t work on privileged pages</span></div>';
-      //resultList.style.display = 'none'
+
+      document.querySelector('.no-priv').innerHTML = `
+        <img class="cant-icon" src="./assets/icons/no-way.svg" /><img /><span
+          style="font-family: lobster, sans-serif"
+          >Min color-picker doesn’t work on privileged pages</span
+        >
+`;
+      resultList.style.display = "none";
     } else if (tab.url.indexOf("file") === 0) {
       buttonCont.innerHTML =
         '<span style="font-family: lobster, sans-serif">Eye Dropper</span> can\'t access <i>local pages</i>';
     } else {
       document.querySelector(".no-priv").style.display = "none";
+      //document.querySelector(".no-color").style.display = "none";
+
       const button = document.createElement("button");
-      button.setAttribute("id", "picker_btn");
-      button.innerText = "Pick Color from webpage";
+      button.setAttribute("id", "add-first-button");
+      button.innerText = "+";
 
       button.addEventListener("click", () => {
         if (!window.EyeDropper) {
@@ -30,13 +37,21 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
+        //document.getElementById('add-button').addEventListener("click", () => {
+        //if (!window.EyeDropper) {
+        //GiveMetheChild(
+        //"#ad5049",
+        //"Your browser does not support the EyeDropper API"
+        //);
+        //return;
+        //}
+
         chrome.tabs.sendMessage(tabs[0].id, {
           from: "popup",
           query: "eye_dropper_clicked",
         });
         window.close();
       });
-
       buttonCont.appendChild(button);
     }
   });
@@ -56,7 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }, 2000);
           GiveMetheChild("#e19526", "Hex code is copied to clipboard!");
         });
-        resultList.appendChild(liElem);
+        //resultList.appendChild(liElem);
+        resultList.insertAdjacentElement("afterbegin", liElem);
       });
 
       const ClearButton = document.createElement("button");
@@ -70,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".no-color").style.display = "none";
+      document.getElementById('add-first-button').style.display = 'none'
       resultList.style.display = "grid";
       document.querySelector("header").appendChild(ClearButton);
     }
