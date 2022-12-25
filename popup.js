@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tab.url === undefined || tab.url.indexOf("chrome") == 0) {
       document.querySelector(".no-color").style.display = "none";
-      document.querySelector(".no-priv").style.display = "flex";
+      //document.querySelector(".no-priv").style.display = "flex";
 
-      document.querySelector('.no-priv').innerHTML = `
+      document.querySelector(".no-priv").innerHTML = `
         <img class="cant-icon" src="./assets/icons/no-way.svg" /><img /><span
           style="font-family: lobster, sans-serif"
           >Min color-picker doesn’t work on privileged pages</span
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       //document.querySelector(".no-color").style.display = "none";
 
       const button = document.createElement("button");
-      button.setAttribute("id", "add-first-button");
-      button.innerText = "+";
+      button.setAttribute("id", "picker_btn");
+      button.innerText = "Pick color from page web";
 
       button.addEventListener("click", () => {
         if (!window.EyeDropper) {
@@ -86,9 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".no-color").style.display = "none";
-      document.getElementById('add-first-button').style.display = 'none'
+      //document.getElementById("add-first-button").style.display = "none";
       resultList.style.display = "grid";
       document.querySelector("header").appendChild(ClearButton);
+    } else {
+      document.querySelector(".cant-container").innerHTML = `
+        <img class="cant-icon" src="./assets/icons/pantone.svg" /><img /><span
+          style="font-family: lobster, sans-serif"
+          >Use the color picker tool to select a pixel on the page. Or select a
+          color from the lists below.</span
+        >
+    `;
     }
   });
 });

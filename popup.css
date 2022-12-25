@@ -1,5 +1,5 @@
 :root {
-  --backgound-color:#008cff;
+  --backgound-color:#15183b;
   --primal-color: #000926;
   --text-color: #ffffff;
   --info-text-color: #ffffff;
@@ -81,24 +81,20 @@ header h4 {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
-  color: #0b99b6;
+  color: var(--backgound-color);;
   font-weight: bold;
 }
 
 #picker_btn:hover {
-  background-color: #025479;
+  background-color: #245fb3;
   color: var(--text-color);
-}
-
-#picker_btn_cont{
-  margin:5px;
 }
 
 #result {
   list-style: none;
   grid-gap: 3px;
   padding: 0;
-  display: none;
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 5px 5px;
 }
@@ -108,7 +104,7 @@ header h4 {
     padding: 2px 5px;
     font-size: 15px;
     border-radius: 3px;
-    color: #fff5;
+    color: #0008;
     font-weight:bold;
     text-align: center;
     height: 30px;
@@ -116,6 +112,11 @@ header h4 {
     justify-content: end;
     align-items: end;
     border:solid thin transparent;
+    transition:color .3s ease;
+  }
+
+  #result > li:hover {
+  color:white;
   }
 
 .errorLabel {
@@ -192,3 +193,4 @@ header h4 {
 .info-open {
   display: block;
 }
+
