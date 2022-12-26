@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="http://imgfz.com/i/TAjkVpn.png" alt="MCP Logo" width="150">
+  <img src="http://imgfz.com/i/9fsVoZY.png" alt="MCP Logo" width="150">
   <h1>Min color-picker</h1>
   <strong>Click it - Select it - Get it - Use it</strong>
 </div>
