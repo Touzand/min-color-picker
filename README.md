@@ -1,7 +1,7 @@
 <div align="center">
   <img src="http://imgfz.com/i/9fsVoZY.png" alt="MCP Logo" width="150">
   <h1>Min Eye-dropper</h1>
-  <strong>Click it - Select it - Get it - Use it</strong>
+  <strong>If you ever need to pick color from any website, Min eye-dropper is here to help.</strong>
 </div>
 <br>
 
