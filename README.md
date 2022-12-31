@@ -7,6 +7,6 @@
 
 ## MCP
 
-MCP is a simple and easy to use chrome extension color picker with which you can select the color by choosing the HEX code of any pixel on your screen.
+MCP is a straight forward and user-friendly Chrome extension color picker that allows you to get a color by selecting the HEX code of any pixel on a webpage and even outside the browser.
 
-This means that if you are not limited to your browser, activating the selector by pressing the button that says "select color from the web page" you can even select the color of a pixel outside of your browser with total freedom
+In other words, if your browser is not your only tool, you can freely choose the color of a pixel outside of your browser by activating the selector by clicking the "select color from the web page" button.
