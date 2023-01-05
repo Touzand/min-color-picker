@@ -94,6 +94,10 @@ header h4 {
   color: var(--text-color);
 }
 
+#picker_btn_cont{
+  display:flex;
+}
+
 #result {
   list-style: none;
   grid-gap: 3px;
@@ -136,7 +140,7 @@ header h4 {
 
 #ClearButton {
   cursor: pointer;
-  background-color: transparent;
+  background-color: #1a3771;
   color: var(--text-color);
   border: solid thin transparent;
   display:flex;

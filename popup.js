@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }, 2000);
           GiveMetheChild("#e19526", "Hex code is copied to clipboard!");
         });
+        resultList.insertAdjacentElement("afterbegin", liElem);
       });
 
       const ClearButton = document.createElement("button");
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".no-color").style.display = "none";
-      document.querySelector("header").appendChild(ClearButton);
+      document.getElementById("picker_btn_cont").appendChild(ClearButton);
     } else {
       document.querySelector(".cant-container").innerHTML = `
         <img class="cant-icon" src="./assets/icons/pantone.svg" /><img /><span
