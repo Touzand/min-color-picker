@@ -22,6 +22,6 @@
       "js": ["./contentScript.js"]
     }
   ],
-  "permissions": ["tabs", "storage"],
+  "permissions": ["tabs", "storage", "scripting", "downloads", "privacy"],
   "host_permissions": ["<all_urls>"]
 }

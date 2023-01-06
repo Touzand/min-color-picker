@@ -10,6 +10,7 @@
     />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="Alan G. Alonso" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://cdnjs.cloudflare.com; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' http://cdnjs.cloudflare.com ">
     <title>Min color-picker</title>
     <link rel="stylesheet" href="./popup.css" type="text/css" media="all" />
   </head>
@@ -24,7 +25,9 @@
 
       <div class="cant-container no-priv"></div>
 
-      <ul id="result"></ul>
+      <ul id="result">
+        <button id="imagen">Imagen</button>
+      </ul>
       <div id="picker_btn_cont"></div>
       <div class="info-container">
         <p>Hex code is copied to clipboard!</p>
@@ -32,4 +35,5 @@
     </div>
   </body>
   <script src="popup.js"></script>
+  <script src="html2canvas.js"></script>
 </html>
