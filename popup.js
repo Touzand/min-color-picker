@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (tab.url === undefined || tab.url.indexOf("chrome") == 0) {
       document.querySelector(".no-color").style.display = "none";
+      document.getElementById("picker_btn_cont").style.display = "none";
 
       document.querySelector(".no-priv").innerHTML = `
         <img class="cant-icon" src="./assets/icons/no-way.svg" /><img /><span
@@ -73,8 +74,30 @@ document.addEventListener("DOMContentLoaded", () => {
         window.close();
       });
 
+      const SaveButton = document.createElement("button");
+      SaveButton.innerHTML =
+        "<img src='./assets/icons/clear.svg' alt='save-button'>";
+      SaveButton.setAttribute("id", "ClearButton");
+
+      SaveButton.addEventListener("click", () => {
+        console.log(document.getElementById("result"));
+        console.log(document);
+        html2canvas(document.body).then((canvas) => {
+          var blob = canvas.toBlob((blob) => {
+            url = window.URL.createObjectURL(blob);
+            window.open(url);
+          }, "image/png");
+        });
+      });
+
+      ClearButton.addEventListener("click", () => {
+        chrome.storage.local.remove("color_hex_code");
+        window.close();
+      });
+
       document.querySelector(".no-color").style.display = "none";
       document.getElementById("picker_btn_cont").appendChild(ClearButton);
+      //document.getElementById("picker_btn_cont").appendChild(SaveButton);
     } else {
       document.querySelector(".cant-container").innerHTML = `
         <img class="cant-icon" src="./assets/icons/pantone.svg" /><img /><span
