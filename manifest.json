@@ -19,9 +19,9 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["./contentScript.js","./html2canvas.min.js"]
+      "js": ["./contentScript.js"]
     }
   ],
-  "permissions": ["tabs", "storage", "scripting", "downloads", "privacy"],
+  "permissions": ["tabs", "storage"],
   "host_permissions": ["<all_urls>"]
 }

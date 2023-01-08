@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mainCont = document.getElementById("mainCont");
   const buttonCont = document.getElementById("picker_btn_cont");
   const resultList = document.getElementById("result");
 

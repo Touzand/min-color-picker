@@ -1,25 +1,3 @@
-console.log("Screen Capture Extension Script has loaded");
-// Listen to the messages sent by the background script
-chrome.runtime.onMessage.addListener(ScreenCaptureExtCB);
-
-
-// Screen Capture Extension's Callback [Receiving message]
-function ScreenCaptureExtCB(msg) {
-  console.log(msg);
-console.log(document);
-
-
-if (msg.action == "capture") {
-console.log(document)
-    html2canvas(document.body).then((canvas) => {
-      var blob = canvas.toBlob((blob) => {
-        url = window.URL.createObjectURL(blob);
-        window.open(url);
-      }, "image/png");
-    });
-  }
-}
-
 chrome.runtime.onMessage.addListener((message, sender) => {
   if (message.from === "popup" && message.query === "eye_dropper_clicked") {
     setTimeout(() => {
